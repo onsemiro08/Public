@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 선언적 함수
+        // function 함수명(매개변수1,매개변수2...){}
+        // =>호출해서 사용
+        // =>함수명(매개변수1...) 호출
+        // function print_f(){
+        //     document.write('3+4');
+        // }
+        // print_f();
+        // print_f();
+        // print_f();
+
+        //f(3)=x*x=? -> 9
+        //f(x)=x*x => f(3) => 9
+        // print_f1(5,4)
+        // function print_f1(a,b){
+        //     document.write(a+b,"선언적함수");
+        // }
+        // =>자바스크립트 구조상 선언적함수 
+        // =>로드시 가장 먼저 로드됨
+        // =>선언적 함수 1차 로드 후 순서대로 로드함
+        // =>함수의 정의 위치와 호출의 위치가 맘대로 되어 
+        // 있어도 사용가능
+
+        //a=5,b=4 => 5+4
+        // 2. 익명함수
+        // let 변수=function(매개변수1,매개변수2...){}
+        // =>호출해서 사용
+        // =>변수명(매개변수1...) 호출
+        
+        // let print_f2=function(a,b){
+        //     document.write(a+b,"익명함수");
+        // }
+        // print_f2(5,4)
+        // =>변수에 정의를 하는 익명함수는 무조건
+        // 함수 정의 후에 호출사용해야함
+
+
+        function add(){
+            //console.log(10+20);
+            return 10+20;
+            // 함수내부에서 결과값을 출력문이 없을때
+            // =>결과값을 가지고 있는 함수 일때
+            // =>함수 외부에서는 함수 내부의 값을 확인 할 수 없음
+        // return 함수 외부로 함수 내부에서 발생한 결과값을
+        // 넘겨주는 명령 
+        }
+       let f=add();
+        document.write(f);
+
+
+
+
+    </script>
+</body>
+</html>
