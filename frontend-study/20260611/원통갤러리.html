@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 전체 여백 없애기 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 2.body 가로 크기 600px 고정 중앙 정렬시키기 */
+        body{
+            width: 600px;
+            margin: 0 auto;
+        }
+        /* 3.out_box 가로 100%,높이 200px
+        원근감 1500px */
+        .out_box{
+            width: 100%;
+            height: 200px;
+            perspective: 1500px;
+            position: relative;
+        }
+        /* 4.rotate_box 부모기준으로 왼쪽 상단을 중앙위치
+        위쪽에서 100px 떨어지게 위치 설정
+        자식인 face영역을 3d공간으로 만들기
+        0~360도 회전 15초동안 일정시간값으로 무한대 반복 */
+        .rotate_box{
+            position: absolute;
+            left: 50%;
+            top:100px;
+            transform-style: preserve-3d;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: ro_box 15s linear infinite alternate;
+        }
+        @keyframes ro_box {
+            from{
+                transform: rotateY(0);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+        /* 5.face 가로세로 230px,600px 
+        부모의 왼쪽 상단으로 기준 설정
+        왼쪽 여백을 자신의 가로 크기 반만큼을 왼쪽으로 이동
+        3d 환경에서 반대편 영역은 보이지 않게 설정
+        cell의 환경을 3d로 만들기
+        face_1~10 까지 y축 36도 간격 회전
+        z축으로 뒤로 370px 이동하기
+        face의 배경색은 각 배경색 삽입 */
+        .face{
+            width: 230px;
+            height: 600px;
+            position: absolute;
+            margin-left: -115px;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+        .face_1{
+            background-color: aqua;
+            transform: rotateY(0deg) translate3d(0,0,-370px);
+        }
+        .face_2{
+            background-color: rgb(21, 255, 0);
+            transform: rotateY(36deg) translate3d(0,0,-370px);
+        }
+        .face_3{
+            background-color: rgb(16, 102, 231);
+            transform: rotateY(72deg) translate3d(0,0,-370px);
+        }
+        .face_4{
+            background-color: rgb(111, 0, 255);
+            transform: rotateY(108deg) translate3d(0,0,-370px);
+        }
+        .face_5{
+            background-color: rgb(255, 0, 234);
+            transform: rotateY(144deg) translate3d(0,0,-370px);
+        }
+        .face_6{
+            background-color: rgb(255, 0, 0);
+            transform: rotateY(180deg) translate3d(0,0,-370px);
+        }
+        .face_7{
+            background-color: rgb(229, 255, 0);
+            transform: rotateY(216deg) translate3d(0,0,-370px);
+        }
+        .face_8{
+            background-color: rgb(255, 166, 0);
+            transform: rotateY(252deg) translate3d(0,0,-370px);
+        }
+        .face_9{
+            background-color: rgb(1, 245, 152);
+            transform: rotateY(288deg) translate3d(0,0,-370px);
+        }
+        .face_10{
+            background-color: rgb(27, 197, 41);
+            transform: rotateY(324deg) translate3d(0,0,-370px);
+        }
+
+        /* 6.cell 가로세로 230*150 설정
+        아랫쪽 여백 10px, 배경색 지정
+        cell에 마우스를 올리면 0.5초 시간 설정으로
+        z축으로 50px 앞으로 나오면서 1.2배 확대 되도록하기 */
+        .cell{
+            width: 230px;
+            height: 150px;
+            margin-bottom: 10px;
+            background-color: gray;
+            font-size: 100px;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            transition-duration: 0.5s;
+        }
+        .cell:hover{
+            transform: translateZ(50px) scale(1.2);
+        }
+    </style>
+</head>
+<body>
+   <!-- 1.전체 부모 객체를 만들기 out_box -->
+   <div class="out_box">
+    <!-- 2.out_box>rotate_box 박스 만들기 -->
+     <div class="rotate_box">
+        <!-- 3.rotate_box > face(10개) -->
+         <div class="face face_1">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_2">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_3">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_4">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_5">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_6">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_7">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_8">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_9">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+         <div class="face face_10">
+            <!-- 4.face>cell 4개  -->
+             <div class="cell cell_1">1</div>
+             <div class="cell cell_2">2</div>
+             <div class="cell cell_3">3</div>
+             <div class="cell cell_4">4</div>
+         </div>
+     </div>
+   </div>
+   
+</body>
+</html>
