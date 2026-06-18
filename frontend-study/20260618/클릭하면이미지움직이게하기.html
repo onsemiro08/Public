@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mask_box{
+            width: 900px;
+            height: 400px;
+            border: 10px solid black;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .move_box{
+            /* width: 4000px; */
+            /* =>img_box의 가로크기 * 갯수값 */
+            height: 400px;
+            position: absolute;
+            top:0;
+            left: 0;
+            display: flex;
+            transition-duration: 0.5s;
+        }
+        .img_box{
+            width: 300px;
+            height: 400px;
+            background-color: violet;
+            font-size: 100px;
+            text-align: center;
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            font-size: 30px;
+            position: absolute;
+            top:calc(50% - 25px);
+        }
+        .left_btn{
+            left: 0;
+        }
+        .right_btn{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 규칙 -->
+     <div class="mask_box">
+        <!-- =>배너의 전체 부모
+        =>보여지는 영역 -->
+        <div class="move_box">
+            <!-- =>mask_box를 기준으로 위치변경이 되는 박스
+            =>이미지의 부모박스 
+            =>가로형(가로값이 길게 이미지의 가로크기*이미지갯수값)
+            =>세로형(세로값이 길게 이미지의 세로크기*이미지갯수값)  
+            -->
+            <div class="img_box">1</div>
+            <div class="img_box">2</div>
+            <div class="img_box">3</div>
+            <div class="img_box">4</div>
+            <div class="img_box">5</div>
+            <div class="img_box">6</div>
+            <div class="img_box">7</div>
+            <div class="img_box">8</div>
+            <div class="img_box">9</div>
+            <!-- =>배열처리 -> index,length -->
+            <!-- =>img_box가 mask_box와 크기가 같으면 이미지 1개 보임
+            =>img_box가 mask_box 안에서의 크기에 따라 보여지는
+            갯수가 달라짐
+            =>img_box 안에서 이미지와 텍스트 구조에 따라
+            보여지는 형태가 달라짐 -->
+        </div>
+        <div class="btn left_btn">왼쪽</div>
+        <div class="btn right_btn">오른쪽</div>
+     </div>
+     <script>
+        // 1.필요한 객체 선택
+        // =>클릭해야 하는 버튼
+       const left_btn=document.querySelector(".left_btn");
+       const right_btn=document.querySelector(".right_btn");
+        // =>실제로 움직이는 영역
+       const move_box=document.querySelector(".move_box");
+
+    //    배열값 활용
+    // 5개의 img_box 모두를 선택해야 배열 처리됨
+    // =>img_box의 갯수값
+    const img_boxs=document.querySelectorAll('.img_box');
+    //alert(img_boxs.length);
+
+    // img_box의 가로크기값*img_box의 갯수=move_box의 가로크기
+    // >img_box의 스타일 가로크기값 활용하기
+    // 객체의 가로세로크기값, x,y,top,left,right,bottom의 위치값
+    // 정보를 가지고 올때 사용하는 명령
+    //=>정보를가지고올객체.getBoundingClientRect();
+        const img_box=document.querySelector('.img_box');
+        let img_box_info=img_box.getBoundingClientRect();
+        //console.log(img_box_info);
+        let img_box_width=img_box_info.width;
+        //console.log(img_box_width);
+
+        // move_box의 가로크기 설정
+        move_box.style.width=img_box_width*img_boxs.length+'px';
+
+        let click_num=0;
+        // 1.오른쪽 버튼을 클릭하면 move_box가
+        // left값이 0,800,1600,2400,3200 왼쪽으로 움직임
+        right_btn.addEventListener('click',function(){
+            click_num++;
+            //1,2,3,4 => 정지
+            // if(click_num>4){
+            //     click_num=4;
+            // }
+            if(click_num>img_boxs.length-1){
+                click_num=img_boxs.length-1;
+            }
+            move_box.style.left=-img_box_width*click_num+'px'
+        })
+
+        // 2.왼쪽 버튼을 클릭 하면 move_box가 
+        // 이미 왼쪽으로 움직인 move_box가 
+        // 3200,2400,1600,800,0 다시 돌아옴
+        // click_num 변수 0,1,2,3,4 커져 있는 상태
+        left_btn.addEventListener('click',function(){
+            // 4,3,2,1,0 => -3200,-2400,-1600,-800,0
+            click_num--;
+            if(click_num<=0){
+                click_num=0;
+            }
+            move_box.style.left=-img_box_width*click_num+'px'
+        })
+
+        //마지막 index 순서값=배열.length-1
+     </script>
+</body>
+</html>
