@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .item_1{
+            color: red;
+            background-color: aqua;
+        } */
+    </style>
+</head>
+<body>
+    <div class="out_box">
+        <div class="list">
+            <div class="item item_1">자식1</div>
+            <div class="item item_2">자식2</div>
+            <div class="item item_3">자식3</div>
+            <div class="item item_4" id="box">자식4</div>
+        </div>
+    </div>
+    <script>
+        // document.querySelector(css 스타일선택자)
+        // =>클래스 .클래스
+        // =>아이디 #아이디
+        // =>태그 태그명
+        // 스타일 적용 방법
+        // 선택자.style.속성명=속성값
+        // document.querySelector('.item_1').style.color="red"
+        // document.querySelector('.item_1').style.backgroundColor="#00ff00"
+
+        // 선택자 줄이기
+        // =>변수에 저장 사용함
+        // =>선택자를 저장하는 변수는 선택자를 수정 할 필요가 없음
+        // let,const(추천)
+        // let a; // 비어있는 변수 선언
+        // a="값을 정의";
+        // =>let a 선언문 사용으로 동일한 변수명 사용 안됨
+        // =>선언된 변수에 새로운값을 정의할 수 있음
+        // let a=10;
+        // // let a= 재선언 할 수 없음
+        // a=30; 변수의 재정의는 가능함
+
+        // const b; 비어있는 변수 선언 안됨
+        // const b=30; //무조건 초기화가 되어야함
+        // const b // 재선언 할 수 없음
+        // b=40; //재정의도 할 수 없음
+
+        // const item_1=document.querySelector('#box');
+        // // =>하나의 객체만 선택함
+        // item_1.style.color="blue"
+//const list=document.querySelector(".list");
+//list.style.color="red";
+//const items=document.querySelector(".item");
+// =>반복되는 클래스를 선택하면 첫번째 객체만 선택됨
+//items.style.color="red"
+// 여러개의 동일한 객체를 태그,클래스 선택시
+// document.querySelectorAll()
+// let items=document.querySelectorAll('.item');
+// =>배열값 처리,for문 사용
+//console.log(items);
+// items.style.color="red";
+// items[0].style.color="red";
+// items[1].style.color="red";
+// items[2].style.color="red";
+// items[3].style.color="red";
+// for(i=0;i<items.length;i++){
+//     items[i].style.color="red";
+// }
+// 1.forEach
+// =>요소값
+// 배열.forEach(function(요소저장변수){
+//     요소.명령.추가속성=속성값
+// });
+// items.forEach(function(i){
+//     i.style.color="green"
+// })
+
+// 2.forin
+// =>순서값
+// for(순서값저장변수 in 배열명){
+//     실행식
+// }
+// for(h in items){
+//     items[h].style.color="red"
+// }
+
+// 3.forof
+// =>요소값
+// for(요소를저장할변수 of 배열명){
+//     실행식
+// }
+// for(t of items){
+//     t.style.color="blue"
+// }
+// 텍스트 색상이
+// 빨강, 파랑, 초록, 노랑색이 각자 들어갈 수 있게
+let items=document.querySelectorAll('.item');
+const colors=['red', 'blue', 'green', 'yellow'];
+for(i=0;i<items.length;i++){
+    items[i].style.backgroundColor=colors[i];
+}
+
+
+    </script>
+</body>
+</html>
