@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            color: #333;
+            /* =>텍스트 관련 스타일은 부모객체에서 상속 가능
+            =>a태그의 텍스트 색상은 부모에게서 상속 되지 않음
+            =>a태그의 텍스트 색상 변경 무조건 a태그를 선택 변경해야함 */
+            text-decoration: none;
+        }
+        .menu_wrap{
+            display: flex;
+            /* =>top_menu가 가로 정렬 */
+            background-color: aqua;
+            /* justify-content: space-between; */
+        }
+        .top_menu{
+            width: calc(100% / 4);
+            /* =>부모인 menu_wrap의 크기가 어떻게 변경이 되든
+            항상 4등분 값이 설정됨 */
+            height: 50px;
+            background-color: violet;
+            text-align: center;
+            line-height: 50px;
+            transition-duration: 0.5s;
+        }
+        .top_menu a{
+            display: block;
+            height: 50px;
+        }
+        .sub_menu{
+            /* 시간값이 없이 형식을 없애서 보이지 않게 설정 */
+            /* display: none; */
+            transition-duration: 0.5s;
+            height: 0;
+            /* =>부모의 크기값 보다 자식이 넘치면 자르기 */
+            overflow: hidden;
+        }
+        .sub_menu a{
+            transition-duration: 0.5s;
+            background-color: yellow;
+        }
+        /* top_menu에 마우스를 올리면 sub_menu가 보이게 설정 */
+        .top_menu:hover>.sub_menu{
+            /* display: block; */
+            height: 200px;
+        }
+         /* .top_menu:hover .sub_menu{
+            display: block;
+         } */
+         /* =>css의 hover 범위 자동 선택한 객체 안으로 제한됨 */
+
+        /* .menu_wrap:hover .sub_menu{
+            display: block;
+        } */
+
+
+
+        .top_menu:hover{
+            background-color: navy;
+        }
+        /* 메뉴1~4까지의 텍스트 색상을 흰색으로 변경 */
+        .top_menu:hover>a{
+            color: white;
+        }
+        /* sub_menu a의 텍스트 색상, 배경 변경 */
+        .sub_menu>a:hover{
+            background-color: navy;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu_wrap">
+        <div class="top_menu">
+            <a href="#">메뉴1</a>
+            <div class="sub_menu">
+                <a href="#">서브1</a>
+                <a href="#">서브2</a>
+                <a href="#">서브3</a>
+                <a href="#">서브4</a>
+            </div>
+        </div>
+        <div class="top_menu">
+            <a href="#">메뉴2</a>
+            <div class="sub_menu">
+                <a href="#">서브1</a>
+                <a href="#">서브2</a>
+                <a href="#">서브3</a>
+                <a href="#">서브4</a>
+            </div>
+        </div>
+        <div class="top_menu">
+            <a href="#">메뉴3</a>
+            <div class="sub_menu">
+                <a href="#">서브1</a>
+                <a href="#">서브2</a>
+                <a href="#">서브3</a>
+                <a href="#">서브4</a>
+            </div>
+        </div>
+        <div class="top_menu">
+            <a href="#">메뉴4</a>
+            <div class="sub_menu">
+                <a href="#">서브1</a>
+                <a href="#">서브2</a>
+                <a href="#">서브3</a>
+                <a href="#">서브4</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
