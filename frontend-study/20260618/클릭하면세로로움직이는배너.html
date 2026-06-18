@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 이미지 1개만 보이게
+        마스크박스의 가로세로 500*250
+        이미지 4개 */
+         .mask_box{
+            width: 500px;
+            height: 250px;
+            border: 10px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        .move_box{
+            width: 500px;
+            position: absolute;
+            top:0;
+            left: 0;
+            transition-duration: 0.5s;
+        }
+        .img_box{
+            width: 500px;
+            height: 250px;
+            background-color: violet;
+            font-size: 100px;
+            text-align: center;
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            font-size: 30px;
+            position: absolute;
+            left:calc(50% - 25px);
+        }
+        .top_btn{
+            top: 0;
+        }
+        .bottom_btn{
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 규칙 -->
+     <div class="mask_box">
+        <div class="move_box">
+            <div class="img_box">1</div>
+            <div class="img_box">2</div>
+            <div class="img_box">3</div>
+            <div class="img_box">4</div>
+            <div class="img_box">5</div>
+            <div class="img_box">6</div>
+            <div class="img_box">7</div>
+            <div class="img_box">8</div>
+            <div class="img_box">9</div>
+        </div>
+        <div class="btn top_btn">위</div>
+        <div class="btn bottom_btn">아래</div>
+     </div>
+      <script>
+    const top_btn=document.querySelector(".top_btn");
+    const bottom_btn=document.querySelector(".bottom_btn");
+    const move_box=document.querySelector(".move_box");
+    const img_boxs=document.querySelectorAll('.img_box');
+    const img_box=document.querySelector('.img_box');
+    let img_box_info=img_box.getBoundingClientRect();      
+    let img_box_height=img_box_info.height;
+    move_box.style.height=img_box_height*img_boxs.length+'px';
+
+        let click_num=0;
+        bottom_btn.addEventListener('click',function(){
+            click_num++;
+            if(click_num>img_boxs.length-1){
+                click_num=img_boxs.length-1;
+            }
+            move_box.style.top=-img_box_height*click_num+'px'
+        })
+
+       top_btn.addEventListener('click',function(){
+            click_num--;
+            if(click_num<=0){
+                click_num=0;
+            }
+            move_box.style.top=-img_box_height*click_num+'px'
+        })
+     </script>
+</body>
+</html>
