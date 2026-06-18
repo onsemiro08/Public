@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out_box{
+            width: 500px;
+            height: 500px;
+            border: 10px solid black;
+            margin: 50px auto;
+        }
+        .in_box{
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            line-height: 500px;
+            font-size: 50px;
+            
+            /* 속성값 2D
+            1.이동 translateX,Y
+            =>부모의 왼쪽 상단을 0,0 기준
+            /* transform: translateX(250px) translateY(250px); */
+            /* transform: translate(X,Y); */
+            /* transform: translate(250px,250px); */
+            /* 2.회전 rotateZ
+            => 부모객체 중심(정중앙점)을 기준 
+            =>각도 단위 deg +(시계방향),-(반시계방향)
+            */
+            /* transform: rotate(-45deg); */
+
+            /* 3.크기조절 scaleX,Y
+            => 부모객체 중심(정중앙점)을 기준
+            => 비율값 1배, 2배, 0.5배
+            */
+            /* transform: scale(2); */
+            /* =>정수값 1개 x,y축 동일한 크기값 */
+            /* transform: scale(x,y); */
+            /* transform: scale(0.5,2); */
+            /* 4.기울이기 skewX,Y  */
+            /* transform: skew(-45deg); */
+            /* =>x축값 */
+            /* transform: skew(x,y); */
+            /* transform: skew(-15deg,-45deg); */
+
+            transform: rotate(0) scale(0);
+            opacity: 0;
+            /* =>불투명도
+            =>0 투명, 1 불투명(기본값), 0.5(반투명) */
+            transition-duration: 1s;
+        }
+
+        .out_box:hover>.in_box{
+            transform: rotate(720deg) scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="out_box">
+        <div class="in_box">text</div>
+    </div>
+</body>
+</html>
