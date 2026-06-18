@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문제1.
+        // -하나의 수를 변수에 저장
+        // -저장된 수가 10보다 크면 10보다 큰수입니다 출력
+        // -저장된 수가 10보다 작은면 10보다 작은수입니다 출력
+// let a=5;
+// 입력문
+// =>prompt('어떤값을 입력할지 삽입','예시값(생략가능)')
+// =>입력문으로 입력 받은 값은 저장해야 사용이 가능함
+// =>입력문으로 숫자를 입력하면 문자형 숫자로 인식 (더하기 연산자 확인 필요)
+// let a=prompt('숫자입력하기','');
+// =>문자형의 숫자를 숫자로 변경하기
+// =>Number(숫자로 변경할 문자형 숫자)
+// let a=Number(prompt('숫자입력',''));
+// if(a>10){
+//     document.write('a는 10보다 큰수입니다<br>')
+//     document.write("a="+a+' 10보다 큰수입니다<br>')
+// }else if(a<10){
+//     document.write('a는 10보다 작은수입니다<br>')
+//     document.write("a="+a+' 10보다 작은 수입니다<br>')
+//     document.write(a+a);
+// }
+// 문제2
+// 숫자를 하나 입력받기
+// 입력받은 수가 홀수 인지 짝수 인지를 판단하기
+// 짝수이면 짝수입니다. 홀수이면 홀수입니다. 출력
+// 짝수도 홀수도 아니면 숫자를 입력해 주세요 출력
+// let num=Number(prompt('숫자입력',''));
+// if(num%2===0){
+//     document.write("짝수입니다.")
+// }else if(num%2===1){
+//     document.write("홀수입니다.")
+// }else{
+//     document.write("숫자를 입력해주세요")
+// }
+// 문제3
+// =>비밀번호를 두번 입력받아서 일치 여부를 확인
+// let pass_1=prompt('첫번째 비밀번호','');
+// let pass_2=prompt('두번째 비밀번호','');
+// if(pass_1===pass_2){
+//     document.write('비밀번호 일치')
+// }else{
+//     document.write('비밀번호가 일치하지 않습니다.')
+// }
+// 문제 4
+// 나이 판별하기
+// 0~100세까지 나이를 입력 받아 
+let age=Number(prompt('몇살이니?',''));
+if(age>=0 && age<=100){
+    // 0~13세 아동입니다. 출력
+    if(age<=13){
+        document.write('아동입니다.')
+    }
+    // 14~19세 미성년입니다. 출력
+    else if(age>13 && age<=19){
+        document.write('청소년입니다.')
+    }
+    // 20세 이상 성인입니다 출력
+    else if(age>19){
+        document.write('성인입니다.')
+    }
+}else{
+     document.write('0~100까지 입력해주세요')
+}
+
+
+
+    </script>
+</body>
+</html>
