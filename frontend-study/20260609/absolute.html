@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out_box{
+            width: 800px;
+            height: 800px;
+            border: 10px solid black;
+            margin: 0 auto;
+            position: relative;
+            /* position: fixed;
+            top:100px;
+            left: 100px; */
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            position: absolute;
+            /* =>부모의 왼쪽 상단을 0,0 기준
+            => 자식에게 position: absolute 지정시
+            부모에게 position값 설정
+            =>만약 부모에게 position값이 없으면
+            더 위쪽 부모중 position값이 있는 객체를 찾음
+            만약 모든 부모 객체에 position값이 없으면
+            body의 왼쪽 상단을 기준함
+            */
+        }
+        .box_1{
+           background-color: red; 
+           top:0;
+           left: 0;
+           z-index: 3;
+        }
+        .box_2{
+           background-color: blue; 
+           top:150px;
+           left: 150px;
+           z-index: 4;
+        }
+        .box_3{
+           background-color: green; 
+           top:300px;
+           left: 300px;
+           z-index: 1;
+        }
+        .out_box:nth-child(2){
+            width: 400px;
+            /* 부모객체보다 자식객체의 크기값이 클때 */
+            /* 1.자르기 */
+            /* overflow: hidden; */
+            /* 2.스크롤로 보이게 설정 */
+            /* overflow: scroll; */
+            /* overflow-x: hidden;
+            =>가로값을 잠그면 세로 스크롤 */
+            /* overflow-y: hidden; */
+            /* =>세로값을 잠그면 가로 스크롤 */
+        }
+        img{
+            /* 인라인 블럭형식
+            =>기본 여백값 있음
+            =>이미지는 블럭형식 태그의 자식요소로 
+            사용해서 레이아웃 작업함 */
+            /* 부모 객체의 가로세로 크기에 맞춤 처리 */
+            /* width: 100%;
+            height: 100%; */
+            /* =>부모객체 크기에 맞춤처리 */
+            /* object-fit: contain; */
+            /* =>width: 100%,height: 100% 적용 필수
+            =>fill 채우기(기본값) 찌그러짐 발생
+            =>cover 채우기 비율값 맞춤
+            =>비율값이 큰쪽으로 맞춤, 확대 커지는 부분 잘림
+            =>contain 비율값 맞춤
+            =>비율값이 작은쪽으로 맞춤, 축소 여백이 발생
+            */
+
+            width: 800px;
+            height: 1600px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="out_box">
+        <div class="box box_1">1</div>
+        <div class="box box_2">2</div>
+        <div class="box box_3">3</div>
+    </div>
+
+    <div class="out_box">
+        <img src="./img/a.jpg">
+    </div>
+    <!-- <img >
+    <img > -->
+</body>
+</html>
