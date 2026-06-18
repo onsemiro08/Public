@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let 변수명=데이터;
+        // =>변수에는 하나의 데이터를 저장
+        // 배열
+        // =>변수에 여러개의 값을 저장 활용 저장방식
+        // 데이터형
+        // =>데이터의 종류(자료형)
+        // =>숫자, 문자(문자열),불값,객체
+
+        //let 변수(배열)명=[1,'문자',변수,함수,객체,수식];
+        //let a=["첫번째방","두번째방",'세번째방',"네번째방","다섯번째방"];
+        // document.write(a);
+        // =>변수를 한번에 출력 저장된 모든 값을 출력함
+        // =>변수명[방순서값] 방순서값 : index는 0부터 시작
+        // document.write(a[0],"<br>");
+        // document.write(a[1],"<br>");
+        // document.write(a[2],"<br>");
+        // document.write(a[3],"<br>");
+
+        // 반복문 표현하기
+        // for(i=0;i<5;i++){
+        //     document.write(a[i],"<br>")
+        // }
+        // =>배열의 방의 갯수값 length라고 함
+        // =>length=마지막 index+1
+        //document.write(a.length);
+        // =>함수형의 명령()
+        // =>length는 소괄호 없음
+
+        //  for(i=0;i<a.length;i++){
+        //     document.write(a[i],"<br>")
+        // }
+        // let color=['red','blue','yellow','green'];
+        // green(3)=>마지막 index=color.length-1
+        // yellow(2)
+        // blue(1)
+        // red(0)
+        // for(i=color.length-1;i>=0;i--){
+        //     document.write(color[i],"<br>");
+        // }
+        // =>undefined(값없음 자료형) 
+        // =>컴퓨터가 개발자에게 값없음 표현하는 자료형
+        // =>null(값없음 자료형)
+        // =>개발자가 컴퓨터에게 값없음 표현하는 자료형
+
+        // let b;
+        // =>b는 변수, 근데 아무값이 없네? undefined
+        // let c=null;
+        // =>개발자가 계획적으로 비어둔 영역 컴퓨터 인식함
+
+        // 문제 과일이름 5개의 배열을 만들기
+        // 홀수번째 방의 과일이름을 출력하기
+        let fui=["사과","배","포도","바나나","망고"];
+        //1.반복 자체를 홀수, 짝수로 나누어 출력
+        // 0(홀),1(짝),2(홀),3(짝),4(홀)
+        // 0(짝),1(홀),2(짝),3(홀),4(짝)
+        // for(i=0;i<fui.length;i+=2){
+        //     document.write(fui[i],"<br>")
+        // }
+        //2.조건으로 홀수,짝수를 구분 출력
+
+        for(i=0;i<fui.length;i++){
+            if(i%2==0){
+                document.write(fui[i],"<br>")
+            }
+        }
+    </script>
+</body>
+</html>
