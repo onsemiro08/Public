@@ -1,0 +1,189 @@
+/* 공통스타일 */
+/* 블럭형식 모든 태그 선택자
+div,p,h1,h2,h3,h4,h5,h6~ */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* =>레이아웃 작업시 작성 후 시작함 */
+.page{
+    width: 100%;
+    /* height: 980px; */
+    /* =>임의설정 */
+    padding: 50px 0;
+}
+.page_1{
+    background-color: lightsalmon;
+}
+.page_2{
+    background-color: lightseagreen;
+}
+.page_3{
+    background-color: lightcoral;
+}
+.page_4{
+    background-color: lightgreen;
+}
+.page_5{
+    background-color: darkorange;
+}
+.page_6{
+    background-color: deeppink;
+}
+
+/* 첫번째 자식요소 영역 */
+.main_header{
+    height: 110px;
+    background-color: violet;
+}
+.width_1280px{
+    width: 1280px;
+    height: 800px;
+    /* =>임의설정
+       => 부모의 높이값 생략 부모크기를 기준으로
+       계산되어지는 크기설정 사용할 수 없음
+    */
+
+    background-color: green;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main_footer{
+    height: 250px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+/* 텍스트 관련 스타일 부모 속성이 자식에게 상속됨 */
+
+.top_title_20{
+    font-size: 20px;
+}
+.big_text_30{
+    font-size: 30px;
+}
+ 
+
+
+
+
+
+/* 두번째 자식요소 영역 */
+.left_con{
+    width: 600px;
+    height: 800px;
+    background-color: yellow;
+    /* 글씨 색상 속성 */
+    color: green;
+    /* text-align: right; */
+    /* =>텍스트 가로 정렬 */
+    line-height:250%;
+}
+.right_con{
+    width: 600px;
+    height: 800px;
+    background-color: rgb(255, 153, 0);
+    display: flex;
+    justify-content: space-between;
+}
+.in_out{
+    width: calc((100% - 20px) / 2);
+    height: 100%;
+    background-color: lightskyblue;
+}
+.in_con{
+    width: 100%;
+    height: calc((100% - 20px) / 2);
+    background-color: red;
+    margin-bottom: 20px;
+}
+.in_con_1,.in_con_3{
+    height: calc((100% - 90px) / 3);
+}
+.in_con_2{
+    height: calc(((100% - 90px) / 3) + 50px);
+}
+.in_con:last-child{
+    margin-bottom: 0;
+}
+
+/* .page_2>.width_1280px>.right_con>.in_con{
+} */
+.page_2 .right_con{
+    padding: 40px 0;
+    flex-wrap: wrap;
+} 
+.page_2 .in_con{
+    /* =>자손 선택자
+    =>자손은 자식도 포함 */
+    width: calc((100% - 20px) / 2);
+    height: calc((100% - 20px) / 2);
+}
+
+.page_3 .width_1280px{
+    /* flex를 푸는 방법 */
+    /* display: block; */
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.page_3 .left_con,.page_3 .right_con{
+    width: 100%;
+    height: calc((100% - 50px) / 2);
+}
+.page_3 .right_con{
+    gap: 20px;
+}
+.page_3 .in_con{
+    height: 100%;
+}
+.page_4 .in_out{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.in_con_f{
+    height: calc((100% - 200px) / 2);
+}
+.page_5 .right_con{
+    flex-wrap: wrap;
+}
+.page_5 .in_con{
+    width: calc((100% - 20px) / 2);
+}
+
+/* .page_6 .width_1280px,.page_6 .left_con,.page_6 .right_con{
+    height: 400px;
+} */
+.page_6 .width_1280px{
+    height: 400px;
+}
+.page_6 .left_con,.page_6 .right_con{
+    height: 100%;
+}
+.page_6 .right_con{
+    gap:20px;
+    align-items: center;
+}
+.page_6 .in_con{
+    margin: 0;
+}
+
+/* main_footer 안에 있는 left_con,right_con의 높이를
+200px로 수정하기 */
+/* .main_footer>div{
+    height: 200px;
+} */
+ .main_footer{
+    height: 200px;
+    margin-top: 40px;
+ }
+ .page_1 .left_con{
+    display: flex;
+    align-items: center;
+ }
+ .banner_title{
+    font-size: 50px;
+    line-height: 1.5;
+ }
