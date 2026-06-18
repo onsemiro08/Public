@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mask_box{
+            width: 900px;
+            height: 400px;
+            border: 10px solid black;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .move_box{
+            height: 400px;
+            position: absolute;
+            top:0;
+            left: 0;
+            display: flex;
+            transition-duration: 0.5s;
+        }
+        .img_box{
+            width: 300px;
+            height: 400px;
+            background-color: violet;
+            font-size: 100px;
+            text-align: center;
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            font-size: 30px;
+            position: absolute;
+            top:calc(50% - 25px);
+        }
+        .left_btn{
+            left: 0;
+        }
+        .right_btn{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+     <div class="mask_box">
+        <div class="move_box">
+            <div class="img_box">1</div>
+            <div class="img_box">2</div>
+            <div class="img_box">3</div>
+            <div class="img_box">4</div>
+            <div class="img_box">5</div>
+            <div class="img_box">6</div>
+            <div class="img_box">7</div>
+            <div class="img_box">8</div>
+            <div class="img_box">9</div>
+        </div>
+        <div class="btn left_btn">왼쪽</div>
+        <div class="btn right_btn">오른쪽</div>
+     </div>
+     <script>
+     
+    const left_btn=document.querySelector(".left_btn");
+    const right_btn=document.querySelector(".right_btn");
+    const move_box=document.querySelector(".move_box");
+    const img_boxs=document.querySelectorAll('.img_box');
+    const img_box=document.querySelector('.img_box');
+    let img_box_info=img_box.getBoundingClientRect();
+    let img_box_width=img_box_info.width;
+    move_box.style.width=img_box_width*img_boxs.length+'px';
+
+    let click_num=0;
+
+        right_btn.addEventListener('click',function(){
+            click_num++;
+            if(click_num>img_boxs.length-1){
+                click_num=img_boxs.length-1;
+            }
+            move_box.style.left=-img_box_width*click_num+'px'
+        })
+        left_btn.addEventListener('click',function(){
+            click_num--;
+            if(click_num<=0){
+                click_num=0;
+            }
+            move_box.style.left=-img_box_width*click_num+'px'
+        })
+
+     </script>
+</body>
+</html>
