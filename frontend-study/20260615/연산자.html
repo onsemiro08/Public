@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.산술연산자
+        // + 더하기 10+20=30
+        // - 빼기 20-10=10 
+        // * 곱하기 20*10=200
+        // / 나누기 20/10=2
+        // % 나머지 23%10=3
+        // =>어떤 수를 2로 나누어 나머지가 0이면 짝수
+        // =>어떤 수를 2로 나누어 나머지가 1이면 홀수
+// 두수를 산술연산 하기
+// let num_1=20;
+// let num_2=10;
+// document.write(num_1+num_2+"<br>");
+// document.write(num_1-num_2+"<br>");
+// document.write(num_1*num_2+"<br>");
+// document.write(num_1/num_2+"<br>");
+// document.write(num_1%num_2+"<br>");
+// 문제
+// 20+10=30
+// 20-10=10
+// 20*10=200
+// 20/10=2
+// 20%10=0
+// let num_1=20;
+// let num_2=10;
+// document.write("20+10=",num_1+num_2,"<br>")
+// document.write("20-10=",num_1-num_2,"<br>")
+// document.write("20*10="+num_1*num_2+"<br>")
+// document.write("20/10="+num_1/num_2+"<br>")
+// document.write("20%10="+num_1%num_2+"<br>")
+
+// 2. 할당연산자(복합대입연산자)
+// =>하나의 변수에 대입을 두번
+// let a="첫번째 대입값";
+// //document.write(a+"<br>");
+// a="두번째 대입값";
+// document.write(a+"<br>");
+// =>변수에 기존값에 다시 새로운값을 대입 : 변수의 재정의
+// let a=20;
+// //document.write(a=a+10);
+// document.write(a+=10,"<br>");
+// //a=20+10=30 a=30 재정의
+// //document.write(a=a-10);
+// document.write(a-=10,"<br>");
+// //a=30-10=20 a=20 재정의
+// //document.write(a=a*10);
+// document.write(a*=10,"<br>");
+// //a=20*10=200 a=200 재정의
+// //document.write(a=a/10);
+// document.write(a/=10,"<br>");
+// //a=200/10=20 a=20 재정의
+// //document.write(a=a%10);
+// document.write(a%=10,"<br>");
+// //a=20%10=0 a=0 재정의
+
+// 연속적인 연산으로 복합대입 연산자 사용시 주의
+
+// 3. 증감연산자
+// =>무조건 1씩 커지고, 무조건 1씩 작아지는 연산
+// => ++변수,변수++,--변수,변수--
+// 산술연산 표현 => 복합대입연산 표현  => 증감연산자
+// a=a+1       => a+=1            =>  a++,++a
+// a=a-1       => a-=1            =>  a--,--a
+// 문제 a=a+2(O) => a+=2(O) => a++2(X)
+// let a=10;
+//document.write(a++,"<br>");
+//=> a를 출력한 다음 1증가
+//document.write(a,"<br>");
+// document.write(++a,"<br>");
+// => 1증가 먼저 하고 a를 출력
+// document.write(a,"<br>");
+// document.write(a--,"<br>");
+// // => a를 출력한 다음 1감소
+// document.write(a,"<br>");
+// document.write(--a,"<br>");
+// // => 1감소 먼저 하고 a를 출력
+// document.write(a,"<br>");
+// let b=0;
+// document.write(b++,"<br>");
+// document.write(b++,"<br>");
+// document.write(b++,"<br>");
+// document.write(b++,"<br>");
+// document.write(b++,"<br>");
+// document.write(++b,"<br>");
+// document.write(++b,"<br>");
+// document.write(++b,"<br>");
+// document.write(++b,"<br>");
+// document.write(++b,"<br>");
+
+// 4.비교연산자
+// =>두개의 값을 비교해서 참 또는 거짓으로 결과값을 활용
+// let a=30;
+// let b="30";
+// document.write(a>b,"<br>");
+// document.write(a<b,"<br>");
+// document.write(a>=b,"<br>");
+// document.write(a<=b,"<br>");
+// document.write(a==b,"<br>");
+// document.write(a===b,"<br>");
+// document.write(a!=b,"<br>");
+// document.write(a!==b,"<br>");
+
+// let a=50;
+// let b=40;
+// let c=30;
+// document.write(a>b>c);
+// =>a>b 비교 true
+// =>true > c => true(1),false(0)=> 1>30 => 거짓
+// or연산자 거짓 거짓 일때만 거짓
+let a=40;
+let b=50;
+let c=60;
+// document.write(a>b || b>c,"<br>");
+// //거짓 거짓 => 거짓
+// document.write(a<b || b<c,"<br>");
+// //=> 참 참 => 참
+// document.write(a<b || b>c,"<br>");
+// // => 참 거짓 => 참
+// document.write(a>b || b<c,"<br>");
+// // => 거짓 참 => 참
+
+// and연산자 참참일때만 참
+document.write(a>b && b>c,"<br>");
+//거짓 거짓 => 거짓
+document.write(a<b && b<c,"<br>");
+//=> 참 참 => 참
+document.write(a<b && b>c,"<br>");
+// => 참 거짓 => 거짓
+document.write(a>b && b<c,"<br>");
+// => 거짓 참 => 거짓
+
+
+    </script>
+
+</body>
+</html>
