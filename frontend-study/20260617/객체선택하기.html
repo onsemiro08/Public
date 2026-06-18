@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="out_box">
+        <div class="list">
+            <div class="item item_1">자식1</div>
+            <div class="item item_2">자식2</div>
+            <h1 class="h1">사이값</h1>
+            <div class="item item_3">자식3</div>
+            <div class="item item_4" id="box">자식4</div>
+        </div>
+    </div>
+    <h1 id="h">추가사이값</h1>
+    <script>
+//1.자식을 기준으로 부모요소 선택
+// =>css 스타일 선택자의 한계 범위
+// (부모기준>자식,자손 선택, 형제기준 뒤에 있는 형제만 선택)
+   const item_2=document.querySelector('.item_2');
+//    =>기준 자식객체
+const parent=item_2.parentElement;
+// =>바로 상위 부모요소(직계부모)선택
+//console.log(parent);
+// 2.직계부모의 상위부모를 선택할때
+// =>closest(선택할 상위 부모 객체)
+const top_parent=item_2.closest('.out_box');
+//console.log(top_parent);
+
+//3.기준 객체 앞에 있는 형제 요소 선택
+const prev=item_2.previousElementSibling
+//console.log(prev);
+//4.기준 객체 뒤에 있는 형제 요소 선택
+const next=item_2.nextElementSibling;
+//console.log(next);  
+
+// 5.부모 기준으로 자식요소 선택
+const list=document.querySelector('.list');
+// const child=list.children;
+// console.log(list);
+// console.log(child);
+// console.log(child[0])
+// 6.특정 요소 선택
+//=>첫번째 자식요소
+const first_child=list.firstElementChild;
+//console.log(first_child);
+const last_child=list.lastElementChild;
+//console.log(last_child);
+//=>마지막 자식요소
+list.style.backgroundColor="yellow";
+list.style.width="500px";
+const h1=document.querySelector('.h1');
+h1.style.border="5px solid black";
+
+// 7.부모객체에 자식 객체 추가하기
+// =>부모객체.appendChild(삽입할 자식 객체)
+// =>선택한 객체 안쪽으로 기존 내용 뒤쪽 부분으로 추가
+const h=document.querySelector("#h");
+//list.appendChild(h)
+//=>부모객체.insertBefore(추가자식객체,위치)
+// list.insertBefore(h,h1)
+// =>선택한 부모객체의 위치자식요소 앞쪽으로 추가 자식객체 삽입
+
+// 8.새로운 객체(요소)를 추가 만들기
+// =>createElement("만들객체")
+const h3=document.createElement("h3")
+// console.log(h3);
+// =>h3 태그 생성
+// =>만들객체에 텍스트형식의 값을 삽입할때
+// 객체.textContent='삽입할 내용'
+h3.textContent='이렇게 넣으면';
+console.log(h3);
+list.insertBefore(h3,h1)
+    </script>
+</body>
+</html>
