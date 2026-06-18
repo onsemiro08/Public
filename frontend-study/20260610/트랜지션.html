@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 800px;
+            height: 700px;
+            border: 10px solid black;
+            margin: 0 auto;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            background-color: violet;
+            /* transition속성
+            =>시간값, 변화값이 지정되는 객체에 삽입
+            =>속성값이 수치값으로 변경되는 속성에만 적용됨
+            =>이벤트 적용시 변화값이 삽입됨
+            */
+            /* 1.시간값 */
+            transition-duration:2s;
+            /* =>초단위 값 활용 1초 1s,0.5초 0.5s */
+            /* 기본값으로 transition은 변화되는 모든 속성에 적용 */
+            /* transition-property: all;
+            =>기본 */
+            /* transition-property:width; */
+            /* =>적용하고 싶은 속성명 삽입 */
+        }
+        .wrap:hover>.box{
+            width: 700px;
+            background-color: aqua;
+        }
+        .box_1{
+            /* transition-timing-function: linear; */
+            /* 가속도 형태 
+            =>처음 부터 끝까지 일정한 속도로 움직임
+            =>등속 운동(기계적인 느낌)
+            */
+            transition-delay: 1s;
+            /* =>이벤트 발생 지연 시간 지정 */
+        }
+        .box_2{
+            /* transition-timing-function:ease; */
+            /* =>기본값
+            =>천천히 시작해서 중간에 빨라졌다가
+            마무리에 다시 느려짐
+            =>시작과 끝이 부드러움 */
+            transition-delay: 2s;
+        }
+        .box_3{
+            /* transition-timing-function:ease-in; */
+            /* =>느리게 시작해서 끝날때 가장 빨라짐
+            =>출발할때 가속도가 붙는 느낌 */
+            transition-delay: 3s;
+        }
+        .box_4{
+            /* transition-timing-function:ease-in-out; */
+            /* =>아주 느리게 시작해서 중간에 빨라졌다가 
+            느리게 끝남
+            =>ease 보다 시작과 끝이 더 완만함 */
+            transition-delay: 4s;
+        }
+        .box_5{
+            /* transition-timing-function:ease-out; */
+            /* =>빠르게 시작해서 끝날대 천천히 멈춤
+            =>브레이크를 밟으며 부드럽게 멈춤 */
+            transition-delay: 5s;
+        }
+        .box_6{
+            /* transition-timing-function:cubic-bezier(x1,y1,x2,y2); */
+            /* transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+            transition-delay: 6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box_1"></div>
+        <div class="box box_2"></div>
+        <div class="box box_3"></div>
+        <div class="box box_4"></div>
+        <div class="box box_5"></div>
+        <div class="box box_6"></div>
+    </div>
+
+
+
+    
+</body>
+</html>
