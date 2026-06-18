@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* display: flex; */
+            height: 5000px;
+        }
+        .out_box{
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            box-sizing: border-box;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            background-color: wheat;
+            /* position: relative; */
+            /* =>상대값
+            =>자신의 왼쪽 상단점을 0,0 기준
+            =>margin,display:fex영향으로 지정된 위치 
+            그대로 인식함 */
+            /* x축 가로축 left,right
+            y축 세로축 top,bottom */
+            /* 왼쪽 상단 기준(우선순위높음) : left,top
+            오른 하단 기준 : right: ,bottom; */
+            /* left: 0;
+            top: 0; */
+            /* margin: 0 auto; */
+            position: fixed;
+            /* =>윈도우의(브라우저)왼쪽 상단을 기준으로 위치설정 */
+            /* top:0;
+            left: 0; */
+            /* right: 0;
+            bottom: 0; */
+        }
+        .out_box_1{
+            top:50px;
+            left:50px;
+            z-index: 3;
+            /* =>레이어순서값
+            =>position 설정이 되어야 지정가능함
+            =>0 기본 0보다 크면 위쪽 0보다 작으면 아랫쪽
+            =>-99999(무조건 가장 밑으로 보내기)
+            =>99999(무조건 가장 위쪽으로 보내기)
+            */
+        }
+        /* +방향 지정 위치에서 떨어지는 값
+        -방향 지정 위치 쪽으로 가는 값 */
+        .out_box_2{
+            top:200px;
+            left: 200px;
+            z-index: 2;
+        }
+        .out_box_3{
+            top: 400px;
+            left: 400px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="out_box out_box_1">1</div>
+    <div class="out_box out_box_2">2</div>
+    <div class="out_box out_box_3">3</div>
+</body>
+</html>
