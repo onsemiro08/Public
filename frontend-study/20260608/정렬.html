@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out_box{
+            width: 1000px;
+            height: 700px;
+            background-color: violet;
+            display: flex;
+            /* =>자식의 크기값 보다 부모영역에 자식요소의
+            크기가 맞춤 처리
+            우선순위상 부모 크기에 가로크기 맞춤이 우선
+            */
+            /* flex-wrap: wrap; */
+            /* =>자식의 가로크기값이 부모의 크기갑 보다 커지면
+            자동 줄바꿈 처리 */
+            justify-content: space-between;
+            /* align-content: space-between; */
+        }
+        .in_out{
+           width: calc((100% - 10px) / 2);
+           height: 100%;
+        }
+        .box{
+            /* width: 245px; */
+            /* (500-10)/2=245 */
+            /* width: calc((100% - 10px) / 2); */
+            width: 100%;
+            /* =>사칙연산이 가능해짐
+            =>연산자 +, -, /, *
+            =>(괄호안 부터 계산)
+            =>연산자 양쪽으로는 무조건 띄우기 */
+            /* height: 226.67px; */
+            /* height: calc((100% - 20px) / 3); */
+            background-color: teal;
+            font-size: 100px;
+            margin-bottom: 10px;
+        }
+/* .box:nth-child(2),.box:nth-child(4){
+    height: 345px;
+} */
+/* =>2,4,6,8 : 짝수 => 2n */
+/* 부모안에서 짝수 번째 선택 */
+/* .box:nth-child(2n){
+    height: calc((100% - 10px) / 2);
+    background-color: green;
+} */
+/* =>1,3,5,7 : 홀수 => 2n-1
+부모안에서 홀수 번째 선택 */
+/* .box:nth-child(2n-1){
+    background-color: saddlebrown;
+} */
+
+/* 첫번째 in_out 안에 있는 자식 .box 높이가 
+(전체부모 - 20px) / 3 */
+.in_out:first-child>.box{
+    height: calc((100% - 20px) / 3);
+}
+/* 두번째 in_out 안에 있는 자식 .box 높이가
+(전체부모 - 10px) / 2 */
+.in_out:last-child>.box{
+    height: calc((100% - 10px) / 2);
+}
+
+.box:last-child{
+     margin-bottom: 0;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="out_box">
+        <div class="in_out">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+        <div class="in_out">
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </div>
+</body>
+</html>
