@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            background-color: aqua;
+            width: 500px;
+            height: 200px;
+            padding: 30px;
+            box-sizing: border-box;
+            display: inline;
+        }
+        p{
+            background-color: yellow;
+            width: 300px;
+            height: 400px;
+            margin: 50px;
+            display: inline;
+        }
+        div{
+            background-color: violet;
+            width: 300px;
+            height: 300px;
+            display: inline;
+        }
+        span{
+            /* width: 400px;
+            height: 100px; */
+            background-color: turquoise;
+            font-size: 50px;
+            /* margin: 100px; */
+            padding: 50px;
+            /* display: flex;
+            =>인라인 부모객체에게 삽입시
+            =>display이 블럭과 같은 기능으로 사용가능 */
+            /* display: block; */
+            /* =>태그의 기본 형식을 지정하는 속성 */
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            padding: 50px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.블럭형식 태그 -->
+     <!-- =>세로 정렬이 기본값
+     =>가로세로크기 설정 가능함
+     =>여백설정
+     =>전체선택자 초기화 여백 제거 가능
+     =>가로크기 생략시 부모객체의 크기에 맞춤
+     =>세로크기 생략시 자식객체의 크기에 맞춤
+     -->
+     <h1>블럭형식</h1>
+     <p>블럭형식(문단태그)</p>
+     <!-- =>h태그와 p태그는 블럭형식 태그를
+     자식요소로 사용 할 수 없다 -->
+     <div>블럭형식</div>
+     <!-- =>블럭형식 태그의 자식요소로는 블럭형식,인라인형식,인라인블럭형식
+     모두 활용이 가능함 -->
+    <!-- 2.인라인형식 태그 -->
+    <!-- =>a태그, span:텍스트 삽입 인라인형식(키워드형식)
+     => 여백초기화에서 제거 할 수 없는 여백값이 있음
+     =>가로세로 크기값 설정 안됨
+     =>기본 자식요소의 크기값 맞춤 처리됨
+     =>margin값 위아래 값 설정 안됨
+     =>padding값은 지정 가능함
+     =>인라인형식 태그의 자식요소로는 인라인,인라인블럭만 사용 가능
+     =>가로 정렬이 기본
+     -->
+    <!-- <span>인라인태그</span>
+    <span>인라인태그</span>
+    <span>인라인태그</span>
+<a href="#">
+    <div class="box">
+        <img src="./img/b.gif">
+        <p>텍스트</p>
+    </div>
+</a>
+<a href="#">
+    <img src="./img/b.gif">
+    <p>텍스트</p>
+</a> -->
+
+    <!-- 3.인라인블럭형식 태그 -->
+     <!-- =>기본 형식 모두 인라인 형식의 특징을 우선으로 가짐
+     =>단 크기값 지정 가능  -->
+     <img src="./img/a.jpg">
+     <img src="./img/a.jpg">
+     <img src="./img/a.jpg">
+</body>
+</html>
