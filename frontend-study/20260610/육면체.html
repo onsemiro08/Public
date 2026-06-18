@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.전체 여백값 초기화 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* div 모두
+        가로 세로 500*500
+        텍스트 크기 100px,가로세로 중앙 정렬 */
+        div{
+            width: 500px;
+            height: 500px;
+            font-size: 100px;
+            text-align: center;
+            line-height: 500px;
+        }
+        /* out_box를 기준으로 
+        box를 모두 부모 영역 0,0으로 설정 */
+        /* box의 각 다른 배경색 지정 */
+        .out_box{
+            background-color: gray;
+            position: relative;
+            margin: 200px auto;
+            /* 3d 형태의 값을 확인할때
+            자식이 3d구조일때 부모에게 삽입함 */
+            transform-style: preserve-3d;
+            animation-name: ro_box;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            perspective: 500px;
+            /* =>원근감
+            =>수치값이 크면 원근감 작고
+            수치값이 작으면 원근감이 크게 보임 */
+        }
+        .box{
+            position: absolute;
+            top:0;
+            left: 0;
+            opacity: 0.6;
+            backface-visibility: hidden;
+            /* =>뒤쪽 영역 잠금 */
+        }
+        .box:nth-child(1){
+            background-color: red;
+            transform: rotateY(0deg) translate3d(0,0,250px);
+        }
+        .box:nth-child(2){
+            background-color: blue;
+            transform: rotateY(90deg) translate3d(0,0,250px);
+        }
+        .box:nth-child(3){
+            background-color: yellow;
+            transform: rotateY(180deg) translate3d(0,0,250px);
+        }
+        .box:nth-child(4){
+            background-color: green;
+            transform: rotateY(270deg) translate3d(0,0,250px);
+        }
+        .box:nth-child(5){
+            background-color: darkorange;
+            transform: rotateX(90deg) translate3d(0,0,250px);
+        }
+        .box:nth-child(6){
+            background-color: blueviolet;
+            transform: rotateX(270deg) translate3d(0,0,250px);
+        }
+        @keyframes ro_box{
+            from{
+                transform: rotateY(0) rotateX(0);
+            }
+            to{
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="out_box">
+        <div class="box box_1">1</div>
+        <div class="box box_2">2</div>
+        <div class="box box_3">3</div>
+        <div class="box box_4">4</div>
+        <div class="box box_5">5</div>
+        <div class="box box_6">6</div>
+    </div>
+</body>
+</html>
