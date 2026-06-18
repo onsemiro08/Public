@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red_box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-size: 40px;
+            color: white;
+        }
+        .btn{
+            width: 100px;
+            height: 50px;
+            font-size: 30px;
+            margin: 20px;
+            background-color: aqua;
+        }
+        #red_btn{
+            background-color: red;
+        }
+        #blue_btn{
+            background-color: blue;
+        }
+        .num_box{
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.이벤트를 태그에 직접 삽입
+    =>on메서드
+    =>on이벤트명="실행되는 실행식"
+    =>간단한 명령, 함수형을 호출 사용 
+    -->
+    <div class="box" onclick="alert('버튼클릭했다')">클릭</div>
+    <!-- 2.addEventListener()로 이벤트 연결 명령 -->
+    <h1 class="btn">클릭</h1>
+    <script>
+        // 이벤트
+        // =>마우스 이벤트 
+        // - click 마우스를 눌렸다가 뗏을때
+        // - mouseenter 마우스가 요소 안으로 들어왔을때 
+        // - mouseleave 마우스가 요소 밖으로 나갔을때
+        // (css에서 hover는 mouseenter+mouseleave를 동시 실행)
+
+        // - dbclick(더블클릭)
+        // - mouseover 마우스가 요소 위로 올렸을때
+        // - mouseout 마우스가 요소 밖으로 나갔을때
+
+        // - mousemove
+        // (추가로 마우스의 위치값 설정필요)
+        // - mousedown 마우스 버튼을 누르는 순간
+        // - mouseup 마우스 버튼을 눌렀다가 떼는 순간
+
+const btn=document.querySelector(".btn");
+// 이벤트발생객체명.addEventListener("이벤트",이벤트실행식)
+// =>이벤트실행식는 함수식
+btn.addEventListener("click",function(){
+    alert("버튼을 클리했다오")
+})
+btn.addEventListener("mouseenter",function(){
+    btn.style.color="red"
+})
+btn.addEventListener("mouseleave",function(){
+    btn.style.color="black"
+})
+
+
+    </script>
+
+
+<div class="red_box">빨강박스</div>
+<div class="btn" id="red_btn">빨강</div>
+<div class="btn" id="blue_btn">파랑</div>
+
+    <script>
+// 문제
+// 1.body에 200*200 빨강 박스 만들기
+// 2.빨강박스, 파랑박스 라는 버튼 만들기
+// 3.빨강박스 버튼을 클릭하면 빨강박스로 
+// 4.파랑박스 버튼을 클릭하면 파랑박스로 색이 변경되게 만들기
+
+// 이벤트를발생하는객체.addEventListener("이벤트",function(){
+//     이벤트적용객체.style.color="black"
+// })
+const red_box=document.querySelector(".red_box")
+const red_btn=document.querySelector("#red_btn")
+const blue_btn=document.querySelector("#blue_btn")
+
+red_btn.addEventListener("click",function(){
+    red_box.style.backgroundColor="red"
+    red_box.innerText="빨강박스"
+
+})
+blue_btn.addEventListener("click",function(){
+    red_box.style.backgroundColor="blue"
+    red_box.innerText="파랑박스"
+})
+// 태그의 텍스트 요소를 삽입할때 사용하는 명령
+// =>객체선택.innerText="삽입할 텍스트"
+
+    </script>
+
+<div class="num_box">0</div>
+<div class="btn" id="num_btn">클릭</div>
+
+<script>
+// 1.이벤트를 발생하는 버튼선택하기
+const num_btn=document.querySelector("#num_btn");
+// 2.이벤트 적용객체 선택하기
+const num_box=document.querySelector('.num_box');
+// 3.이벤트 연결하기
+// 여기?1
+// 변수 사용전 선언
+let num=0;
+num_btn.addEventListener("click",function(){
+    // 여기?2 이벤트 발생마다 변수가 계속 선언
+    // 버튼을 클릭하면 num변수에 1더하기 한다
+    //num=num+1;
+    //num+=1;
+    num++;
+    //++num;
+    num_box.innerText=num;
+})
+
+</script>
+</body>
+</html>
