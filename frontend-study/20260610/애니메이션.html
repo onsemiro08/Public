@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* =>애니메이션 적용 객체에 지정함 */
+            position: fixed;
+            top:0;
+            left: 0;
+            /* =>첫번째 값,로드시 보여지는 값 */
+            /* 순서2 키프레임과 연결하기 */
+            animation-name: trans;
+            /* 순서3 애니메이션 시간값 설정 */
+            animation-duration: 2s;
+            /* 순서4 애니메이션 반복값 */
+            animation-iteration-count: infinite;
+            /* 순서5 애니메이션 방향값 */
+            /* animation-direction: normal; */
+            /* =>from~to 기본값 */
+            animation-direction: alternate;
+            /* =>from~to~from */
+            /* animation-direction: reverse; */
+            /* =>to~from */
+            /* animation-direction: alternate-reverse; */
+            /* =>to~from~to */
+            /* 순서6 가속도 */
+            /* animation-timing-function: linear; */
+            /* =>일정한 속도 */
+            /* animation-timing-function: ease; */
+            /* =>기본값 부드럽게 시작해서 빨라졌다가 느려짐 */
+            /* animation-timing-function: ease-in; */
+            /* =>느리게 시작 */
+            /* animation-timing-function: ease-out; */
+            /* =>느리게 끝남 */
+            /* animation-timing-function: ease-in-out; */
+            /* =>느리게 시작 느리게 끝 */
+            /* animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); */
+            /* animation-delay: 1s; */
+            /* =>지연값 */
+            /* animation-fill-mode: none;
+            =>애니메이션이 끝나면 원래요소가 가지고 있던 처음 css 상태로 
+            돌아옴 */
+            /* animation-fill-mode: forwards; */
+            /* =>애니메이션이 끝난 상태(to)의 속성유지 */
+            /* =>애니메이션이 시작되기전과 끝난 후의 상태 유지값 */
+            
+        }
+        .box:hover{
+            /* 애니메이션 일시정지 */
+            animation-play-state: paused;
+        }
+
+
+        /* 순서1.키프레임 변화되는 값을 지정 */
+        /* @keyframes 키프레임이름{ */
+         @keyframes trans{
+            from{
+                /* 첫번째 시작값 */
+                left: 0;
+            }
+            50%{
+                /* 사이값 */
+            }
+            to{
+                /* 끝값 */
+                left: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
