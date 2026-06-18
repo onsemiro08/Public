@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1~10까지 출력하기 -->
+     <!-- 출력하기 -->
+    <script>
+        // document.write(1+'<br>');
+        // document.write(2+'<br>');
+        // document.write(3+'<br>');
+        // document.write(4+'<br>');
+        // document.write(5+'<br>');
+        // document.write(6+'<br>');
+        // document.write(7+'<br>');
+        // document.write(8+'<br>');
+        // document.write(9+'<br>');
+        // document.write(10+'<br>');
+        // let a=1; 시작값 필요
+        // =>증가 또는 감소 형태의 횟수값 필요
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');
+        // document.write(a++,'<br>');언제까지 반복을 할지 끝값 필요
+
+        // for(n=1;n<=10;n++){
+        //     document.write(n,"<br>");
+        // }
+        // for(n=10;n>=1;n--){
+        //     document.write(n,"<br>");
+        // }
+// 문제1 입력 받은 수 부터 50까지 출력하기
+// let i=Number(prompt('숫자입력',''));
+// for(num=i;num<=50;num++){
+//     document.write(num,"<br>")
+// }
+// 문제2 1~20까지 수 중 짝수만 출력하기
+//a=a+2 => a+=2 => a2++,a++2,a++++,2a++(X)
+// 2,4,6,8,10,12,14,16,18,20
+// for(j=2;j<=20;j+=2){
+//     document.write(j,"<br>")
+// }
+// 출력문 다음 처럼 나오게 하기
+// 6X1=6
+// 6X2=12
+// 6X3=18
+// 6X4=24
+// 6X5=30
+// 6X6=36
+// 6X7=42
+// 6X8=48
+// 6X9=54
+// 6X10=60
+// for(i=1;i<=10;i++){
+//     document.write(6,'X',i,"=",6*i,"<br>");
+// }
+// 문제 출력하고 싶은 단을 입력받아서 구구단을 출력하기
+// let a=Number(prompt("숫자입력",''))
+// for(i=1;i<=10;i++){
+//     document.write(a,'X',i,"=",a*i,"<br>");
+// }
+
+// if문>if문  있다
+// =>부모 if가 참일때 만 자식 if문이 실행됨
+
+// if문>for문 있다
+// =>부모 if가 참일때 만 자식 for문이 반복 실행됨
+
+// for문>if문 있다
+// =>부모 for문이 반복할때 조건에 맞추어 실행할 수 있다
+
+// for문>for문 있다
+// =>부모 for문이 1번 실행되면 자식 for문은 반복을 모두 실행함
+
+// 단 반복
+// 2단부터 9단 반복하기
+// 곱해지는 값 1~9까지 반복
+for(dan=2;dan<=9;dan++){
+    document.write(dan,"단입니다","<br>")
+    for(gob=1;gob<=9;gob++){
+        document.write(dan,"X",gob,"=",dan*gob,"<br>");
+    }
+    document.write("<br>")
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
